@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Lili Muhamad Padli</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-text">LILI PADLI</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">LILI PADLI</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#education">Pendidikan</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#hobbies">Hobi</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-content fade-in">
+        <h1>Halo, Saya <span>Lili Muhamad Padli</span></h1>
+        <p class="hero-subtitle">Siswa SMK Jurusan Rekayasa Perangkat Lunak</p>
+        <p class="hero-description">
+          Saya memiliki minat besar di bidang teknologi, khususnya dalam pemrograman dan pembuatan aplikasi.
+          Saya adalah pribadi yang disiplin, bertanggung jawab, dan mudah bekerja sama dalam tim.
+        </p>
+        <div class="hero-buttons">
+          <a href="assets/docs/CV kreatif - Lili Muhamad Padli _20251014_080935_0000.pdf" download
+            class="download-btn fade-in">
+            <i class="fas fa-download"></i>
+            Download CV (PDF)
+          </a>
+          <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+        </div>
+      </div>
+      <div class="hero-image fade-in">
+        <img src="assets/images/IMG_9042.JPG" alt="Lili Muhamad Padli">
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <h2 class="section-title fade-in">Pendidikan</h2>
+    <div class="education-container">
+      <div class="education-timeline">
+        <div class="education-item fade-in">
+          <div class="education-year">2023 - 2026</div>
+          <h3 class="education-title">SMK Negeri 1 Kawali</h3>
+          <p class="education-place">Jurusan Rekayasa Perangkat Lunak</p>
+        </div>
+        <div class="education-item fade-in">
+          <div class="education-year">2020 - 2023</div>
+          <h3 class="education-title">SMP Negeri 1 Cipaku</h3>
+        </div>
+        <div class="education-item fade-in">
+          <div class="education-year">2015 - 2020</div>
+          <h3 class="education-title">SD Negeri 2 Cierih</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2 class="section-title fade-in">Keahlian</h2>
+    <div class="skills-container">
+      <div class="skill-card fade-in">
+        <div class="skill-icon">
+          <i class="fas fa-file-word"></i>
+        </div>
+        <h3>Microsoft Office</h3>
+        <p>Dasar-dasar Microsoft Office (Word, Excel, PowerPoint)</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Pemrograman</h3>
+        <p>Dasar-dasar Pemrograman (HTML & CSS)</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">
+          <i class="fas fa-keyboard"></i>
+        </div>
+        <h3>Mengetik</h3>
+        <p>Mengetik dan mengolah data sederhana</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Kerja Sama Tim</h3>
+        <p>Kemampuan bekerja sama dalam tim</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h3>Komunikasi</h3>
+        <p>Komunikasi dasar</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Kepribadian</h3>
+        <p>Disiplin dan tanggung jawab</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+<section class="projects" id="projects">
+  <h2 class="section-title fade-in">Proyek Unggulan</h2>
+  <div class="projects-container">
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card fade-in">
+        <div class="project-image">
+          <img src="assets/images/webpkl.jpg" alt="Landing Page Project">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">web pkl SMKN 1 KAWALI</h3>
+          <p class="project-description">
+            Sebuah web modern dan responsif untuk sekolah.
+           untuk siswa bisa absen dari perusahaan magang nya dan membuat jurnal secara online.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">php</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive Design</span>
+          </div>
+          <div class="project-links">
+            <a href="https://pkl.smkn1kawali.sch.id/PKL%20SMKN%201%20Kawali" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i> proyek saya
+            </a>
+            <a href="https://github.com/lilimpadli" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card fade-in">
+        <div class="project-image">
+          <img src="assets/images/WhatsApp Image 2025-10-16 at 10.02.40_48078803.jpg" alt="School Profile Project">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Website Rental Motor</h3>
+          <p class="project-description">
+            Website untuk rental motor, dengan fitur lengkap dan desain menarik.
+            Pengguna dapat melihat daftar motor, melakukan pemesanan, dan menghubungi admin.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">UI/UX Design</span>
+          </div>
+          <div class="project-links">
+          
+            <a href="https://github.com/lilimpadli" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <h2 class="section-title fade-in">Pengalaman</h2>
+    <div class="experience-container">
+      <div class="experience-grid">
+        <div class="experience-card fade-in">
+          <div class="experience-icon">
+            <i class="fas fa-user-friends"></i>
+          </div>
+          <h3 class="experience-title">Anggota OSIS</h3>
+          <p class="experience-description">Anggota OSIS SMKN 1 Kawali</p>
+        </div>
+        <div class="experience-card fade-in">
+          <div class="experience-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="experience-title">Ekstrakurikuler EXIT</h3>
+          <p class="experience-description">Anggota ekstrakurikuler EXIT (Informasi dan Teknologi)</p>
+        </div>
+        <div class="experience-card fade-in">
+          <div class="experience-icon">
+            <i class="fas fa-newspaper"></i>
+          </div>
+          <h3 class="experience-title">Jurnalistik</h3>
+          <p class="experience-description">Anggota Jurnalistik SMKN 1 Kawali</p>
+        </div>
+        <div class="experience-card fade-in">
+          <div class="experience-icon">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <h3 class="experience-title">ANBK dan Tes VIERA</h3>
+          <p class="experience-description">Mengikuti ANBK dan tes VIERA</p>
+        </div>
+        <div class="experience-card fade-in">
+          <div class="experience-icon">
+            <i class="fas fa-code-branch"></i>
+          </div>
+          <h3 class="experience-title">Pembuatan Landing Page</h3>
+          <p class="experience-description">Membuat Landing Page</p>
+        </div>
+        <div class="experience-card fade-in">
+          <div class="experience-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="experience-title">Diklat</h3>
+          <p class="experience-description">Diklat SMKN 1 KAWALI</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies Section -->
+  <section class="hobbies" id="hobbies">
+    <h2 class="section-title fade-in">Hobi</h2>
+    <div class="hobbies-container">
+      <div class="hobby-card fade-in">
+        <div class="hobby-icon">
+          <i class="fas fa-music"></i>
+        </div>
+        <h3>Mendengar Musik</h3>
+      </div>
+      <div class="hobby-card fade-in">
+        <div class="hobby-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <h3>Membaca Buku</h3>
+      </div>
+      <div class="hobby-card fade-in">
+        <div class="hobby-icon">
+          <i class="fas fa-futbol"></i>
+        </div>
+        <h3>Sepakbola</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="section-title fade-in">Kontak</h2>
+    <div class="contact-container">
+      <div class="contact-info fade-in">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+62 821-2663-5330</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>lilimuhammadfadli@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-instagram"></i>
+          <span>@neo.lmp</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Dusun Cimanggu RT09 RW12, Kec.Cipaku Kab.Ciamis, Prov.Jawa barat</span>
+        </div>
+      </div>
+      <form class="contact-form fade-in" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nama Lengkap</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-links">
+      <a href="https://instagram.com/neo.lmp" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:lilimuhammadfadli@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+6282126635330"><i class="fas fa-phone"></i></a>
+    </div>
+    <p>&copy; 2025 Lili Muhamad Padli. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
