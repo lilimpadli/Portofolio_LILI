@@ -1,3 +1,28 @@
+// Animate skill bars when they come into view
+const skillBars = document.querySelectorAll('.skill-progress');
+
+const animateSkillBars = () => {
+    skillBars.forEach(bar => {
+        const level = bar.getAttribute('data-level');
+        bar.style.width = level + '%';
+    });
+};
+
+// Use Intersection Observer to trigger animation when skills section is visible
+const skillsSection = document.querySelector('.skills');
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateSkillBars();
+            skillsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+if (skillsSection) {
+    skillsObserver.observe(skillsSection);
+}
+
 // Loading Screen
 window.addEventListener('load', () => {
     setTimeout(() => {
@@ -8,28 +33,36 @@ window.addEventListener('load', () => {
     }, 2000);
 });
 
-// Custom Cursor
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
+// Custom Cursor - only for desktop
+if (window.matchMedia("(hover: hover)").matches) {
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    
-    setTimeout(() => {
-        cursorFollower.style.left = e.clientX - 10 + 'px';
-        cursorFollower.style.top = e.clientY - 10 + 'px';
-    }, 100);
-});
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+            cursorFollower.style.left = e.clientX - 10 + 'px';
+            cursorFollower.style.top = e.clientY - 10 + 'px';
+        }, 100);
+    });
+}
 
 // Particle Background
 const canvas = document.getElementById('particles-canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
+// Set canvas size
+function setCanvasSize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+setCanvasSize();
 
 const particles = [];
-const particleCount = 50;
+const particleCount = window.innerWidth < 768 ? 30 : 50; // Fewer particles on mobile
 
 class Particle {
     constructor() {
@@ -98,22 +131,26 @@ animate();
 
 // Resize canvas
 window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    setCanvasSize();
+    // Reinitialize particles on resize
+    particles.length = 0;
+    init();
 });
 
-// Mobile Menu Toggle
+// Mobile Menu Toggle with animation
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
     });
 });
 
@@ -214,6 +251,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
+        }
+    });
+});
+
+// Add active class to navigation links based on scroll position
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
         }
     });
 });
